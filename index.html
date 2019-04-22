@@ -1,0 +1,218 @@
+<html>
+
+<head>
+  <style type="text/css">
+    table {
+      border-collapse: collapse;
+      border: 2px solid black;
+      height: 100%;
+    }
+
+    table th {
+      background-color: aquamarine;
+    }
+
+    table th,
+    table td {
+      border-style: solid dotted;
+      border-width: 2px;
+      border-color: black;
+    }
+
+    .position {
+      background-color: lightsteelblue;
+      height: 20px;
+    }
+
+    .non-active {
+      background-color: lightgrey;
+    }
+
+    .non-participation {
+      background-color: lightpink;
+    }
+  </style>
+</head>
+
+<body>
+  <table border="1" width="100%">
+    <tbody>
+      <th class="position" colspan="6">前衛ズ</th>
+      <tr>
+        <th>ゔあるきりー</th>
+        <td class="karkinos">カルキノス</td>
+        <td class="jabberwock">ジャバウォック</td>
+        <td class="armor-giant">鎧巨人</td>
+        <td class="odio">オディオ</td>
+        <td class="elis">エリス</td>
+      </tr>
+      <tr>
+        <th>もぱん</th>
+        <td class=rikone>リコネ</td>
+        <td class="yuno">ユノ</td>
+        <td class="levi">レヴィ</td>
+        <td class="mireille">ミレイユ</td>
+        <td class="barbarian">バーバリアン</td>
+      </tr>
+      <tr>
+        <th>おいら</th>
+        <td class="rikone">リコネ</td>
+        <td class="yuno">ユノ</td>
+        <td class="dryas">ドリュアス</td>
+        <td class="magia">マギア</td>
+        <td class="barbarian">バーバリアン</td>
+      </tr>
+      <tr>
+        <th>りゅーめい</th>
+        <td class="bran">ブラン</td>
+        <td class="diabolos">ディアボロス</td>
+        <td class="poppy">ポピー</td>
+        <td class="mireille">ミレイユ</td>
+        <td class="barbarian">バーバリアン</td>
+      </tr>
+      <tr>
+        <th>のこ</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <th class="position" colspan="6">後衛ズ</th>
+      <tr>
+        <th>ばっどえんど</th>
+        <td class="rikone">リコネ</td>
+        <td class="yuno">ユノ</td>
+        <td class="dryas">ドリュアス</td>
+        <td class="gallia">ガリア</td>
+        <td class="roisa">ロイサ</td>
+      </tr>
+      <tr>
+        <th>くぐり</th>
+        <td class="mitra">ミトラ</td>
+        <td class="rebun">レブン</td>
+        <td class="gallia">ガリア</td>
+        <td class="magia">マギア</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>おてん</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>たまご</th>
+        <td class="ugarurumu">ウガルルム</td>
+        <td class="yuno">ユノ</td>
+        <td class="freeze-golem">フリーズゴーレム</td>
+        <td class="magia">マギア</td>
+        <td class="wind-golem">ウインドゴーレム</td>
+      </tr>
+      <tr>
+        <th>ひいき</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>るりこ</th>
+        <td class="coco">ココ</td>
+        <td class="freeze-golem">フリーズゴーレム</td>
+        <td class="wind-golem">ウインドゴーレム</td>
+        <td class="magia">マギア</td>
+        <td class="barbarian">バーバリアン</td>
+      </tr>
+      <th>みはち</th>
+      <td class="ugarurumu">ウガルルム</td>
+      <td class="freeze-golem">フリーズゴーレム</td>
+      <td class="silver-tiger">シルバータイガー</td>
+      <td></td>
+      <td></td>
+      </tr>
+      <tr>
+        <th id='12'>（　人　）ﾟдﾟ)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id='13'>（　人　）ﾟдﾟ)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id='14'>（　人　）ﾟдﾟ)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id='15'>（　人　）ﾟдﾟ)</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <script type="text/javascript">
+    const table = document.getElementsByTagName('table');
+
+    const th = table[0].children[0].getElementsByTagName('th');
+    for (let i = 0; i < th.length; i++) {
+      const thItem = th.item(i);
+
+      if (thItem.className !== 'position') {
+        thItem.addEventListener('click', function () {
+          const participation = 'non-participation';
+
+          if (thItem.className === participation) {
+            thItem.classList.remove(participation);
+            thItem.parentNode.classList.remove('non-active');
+          } else {
+            thItem.classList.add(participation);
+            thItem.parentNode.classList.add('non-active');
+          }
+        }, false);
+      }
+    }
+
+    const td = table[0].children[0].getElementsByTagName('td');
+    for (let i = 0; i < td.length; i++) {
+      const tdItem = td.item(i);
+
+      tdItem.addEventListener('click', function () {
+        const selectedClasses = document.getElementsByClassName(tdItem.className);
+        const removeClasses = [];
+
+        for (let i = 0; i < selectedClasses.length; i++) {
+          const selectedClass = selectedClasses.item(i);
+
+          if (selectedClass.className.match('non-active')) {
+            removeClasses.push(selectedClass);
+          } else {
+            selectedClass.classList.add('non-active');
+          }
+        }
+        removeClasses.forEach((removeClass) => {
+          removeClass.classList.remove('non-active');
+        })
+      }, false);
+    }
+  </script>
+</body>
+
+</html>
