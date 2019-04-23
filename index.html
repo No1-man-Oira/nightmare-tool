@@ -192,15 +192,20 @@
 
         for (let i = 0; i < selectedClasses.length; i++) {
           const selectedClass = selectedClasses.item(i);
+          const parentTh = tdItem.parentNode.children[0];
 
           if (selectedClass.className.match('non-active')) {
             removeClasses.push(selectedClass);
+            parentTh.classList.remove('non-participation');
           } else {
             selectedClass.classList.add('non-active');
+            tdItem.parentNode.classList.add('non-active');
+            parentTh.classList.add('non-participation');
           }
         }
         removeClasses.forEach((removeClass) => {
           removeClass.classList.remove('non-active');
+          tdItem.parentNode.classList.remove('non-active');
         })
       }, false);
     }
