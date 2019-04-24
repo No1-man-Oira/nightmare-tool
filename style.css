@@ -1,0 +1,39 @@
+img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    height: 100%;
+}
+
+table th {
+    background-color: aquamarine;
+}
+
+table th, table td {
+    border-style: solid dotted;
+    border-width: 2px;
+    border-color: black;
+}
+
+.position {
+    background-color: lightsteelblue;
+    height: 20px;
+}
+
+.non-active {
+    background-color: lightgrey;
+}
+
+.non-participation {
+    background-color: lightpink;
+}
