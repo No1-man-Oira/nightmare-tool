@@ -37,3 +37,11 @@ table th, table td {
 .non-participation {
     background-color: lightpink;
 }
+
+.main {
+    background-color: lightyellow;
+}
+
+.sub {
+    background-color: lightgray;
+}
