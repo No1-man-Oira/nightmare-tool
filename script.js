@@ -87,10 +87,10 @@ request.onload = function () {
             tr.appendChild(td);
             tr.appendChild(main);
             tr.appendChild(sub);
-        } else if (i >= 2 && i < 6) {
-            setTable(data[i - 1], tr);
-        } else if (i >= 8) {
+        } else if (i >= 2 && i < 7) {
             setTable(data[i - 2], tr);
+        } else if (i >= 8) {
+            setTable(data[i - 3], tr);
         }
 
         tbody.appendChild(tr)
