@@ -65,35 +65,38 @@ request.onload = function () {
     const data = this.response;
     const tbody = document.createElement('tbody');
 
-    for (let i = 0; i < 18; i++) {
+    const main = document.createElement('td');
+    main.textContent = 'メイン', main.className = 'main';
+    const sub = document.createElement('td');
+    sub.textContent = 'サブ', sub.className = 'sub';
+    const space = document.createElement('td');
+    space.setAttribute('colspan', '3');
+
+    const tr1 = document.createElement('tr');
+    tr1.appendChild(document.createElement('td'));
+    tr1.appendChild(main);
+    tr1.appendChild(sub);
+    tr1.appendChild(space);
+
+    tbody.appendChild(tr1);
+
+    for (let i = 0; i < 17; i++) {
         const tr = document.createElement('tr');
 
-        if (i === 0 || i === 7) {
+        if (i === 0 || i === 6) {
             const th = document.createElement('th');
             th.classList.add('position');
             th.textContent = i === 0 ? '前衛ズ' : '後衛ズ';
             th.setAttribute('colspan', '6');
 
             tr.appendChild(th);
-        } else if (i === 1) {
-            const td = document.createElement('td');
-            const main = document.createElement('td');
-            main.textContent = 'メイン';
-            main.className = 'main';
-            const sub = document.createElement('td');
-            sub.textContent = 'サブ';
-            sub.className = 'sub';
-
-            tr.appendChild(td);
-            tr.appendChild(main);
-            tr.appendChild(sub);
-        } else if (i >= 2 && i < 7) {
+        } else if (i >= 1 && i < 6) {
+            setTable(data[i - 1], tr);
+        } else if (i >= 7) {
             setTable(data[i - 2], tr);
-        } else if (i >= 8) {
-            setTable(data[i - 3], tr);
         }
 
-        tbody.appendChild(tr)
+        tbody.appendChild(tr);
     }
 
     table.appendChild(tbody);
