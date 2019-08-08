@@ -90,7 +90,7 @@ request.onload = function () {
             const th = document.createElement('th');
             th.classList.add('position');
             th.textContent = i === 0 ? '前衛ズ' : '後衛ズ';
-            th.setAttribute('colspan', '6');
+            th.setAttribute('colspan', '7');
 
             tr.appendChild(th);
         } else if (i >= 1 && i < 6) {
