@@ -45,7 +45,7 @@ function setTable(data, setRootTr) {
     setThListener(th);
     setRootTr.appendChild(th);
 
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
         const td = document.createElement('td');
         const nightmareName = data[Object.keys(data)[i]];
 
@@ -66,17 +66,20 @@ request.onload = function () {
     const tbody = document.createElement('tbody');
 
     const main = document.createElement('td');
-    main.textContent = 'メイン', main.className = 'main';
+    main.textContent = 'メイン担当', main.className = 'main';
     const sub = document.createElement('td');
-    sub.textContent = 'サブ', sub.className = 'sub';
+    sub.textContent = 'サブ担当', sub.className = 'sub';
     const space = document.createElement('td');
     space.setAttribute('colspan', '3');
+    const subSet = document.createElement('td');
+    subSet.textContent = 'サブセット装備', subSet.className = 'subSet';
 
     const tr1 = document.createElement('tr');
     tr1.appendChild(document.createElement('td'));
     tr1.appendChild(main);
     tr1.appendChild(sub);
     tr1.appendChild(space);
+    tr1.appendChild(subSet);
 
     tbody.appendChild(tr1);
 
